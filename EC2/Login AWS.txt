@@ -1,0 +1,3 @@
+open EC2
+chmod 400 AE.pem
+ssh -i "AE.pem" ec2-user@ec2-3-143-207-44.us-east-2.compute.amazonaws.com
