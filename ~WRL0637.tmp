@@ -1,0 +1,47 @@
+Project 2 Documentation
+
+Project name: Vaccine Tracker
+
+By Abeil Adilow, Emilio Barajas, Anthony Escalante, Phuc Huynh
+
+Project Documentation
+
+   Vaccine Tracker will be a 
+
+MVP
+
+   We will provide an application with a fully functional application with a frontend made with Angular, and a backend made with Java8, Spring, and Hibernate to communicate with the Database. The database will be on a AWS RDS 
+
+User stories
+
+   
+
+Tech Stack
+
+* Frontend 
+   o HTML/CSS/Bootstrap
+   o Angular
+* Backend
+   o Java8
+   o Spring
+   o Hibernate/JPA
+   o Swagger
+* Database 
+   o PostgreSQL/H2
+* Devops
+   o Jenkins 
+   o Git
+   o Gradle
+* Agile Scrum
+   o Trello
+* AWS
+   o RDS
+   o S3
+   o EC2
+* Testing
+   o Junit 
+   o Mockito
+   o Jasmine, Karma
+   o Jacoco
+   o Postman
+
