@@ -1,0 +1,24 @@
+com/app/dao/UserDAO.java
+ com.app.dao.UserDAO
+com/app/model/Consumer.java
+ com.app.model.Consumer
+com/app/model/User.java
+ com.app.model.User
+com/app/model/Professional.java
+ com.app.model.Professional
+com/app/dao/impl/ConsumerDAOImpl.java
+ com.app.dao.impl.ConsumerDAOImpl
+com/app/dao/ConsumerDAO.java
+ com.app.dao.ConsumerDAO
+com/app/dao/ProfessionalDAO.java
+ com.app.dao.ProfessionalDAO
+com/app/dao/impl/UserDAOImpl.java
+ com.app.dao.impl.UserDAOImpl
+com/app/dao/impl/ProfessionalDAOImpl.java
+ com.app.dao.impl.ProfessionalDAOImpl
+com/app/main/Main.java
+ com.app.main.Main
+com/app/model/Address.java
+ com.app.model.Address
+com/app/model/Clinic.java
+ com.app.model.Clinic
