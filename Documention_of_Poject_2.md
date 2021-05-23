@@ -1,6 +1,6 @@
 # Project 2 Documentation
 
-## Project name: Vaccine Tracker
+## Project name: Vaccine Tracker 
 
 By Abeil Adilow, Emilio Barajas, Anthony Escalante, Phuc Huynh 
 
