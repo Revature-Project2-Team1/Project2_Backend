@@ -10,11 +10,11 @@ By Abeil Adilow, Emilio Barajas, Anthony Escalante, Phuc Huynh
 
 ## MVP
 
-   We will provide an application with a fully functional application with a frontend made with Angular, and a backend made with Java8, Spring, and Hibernate to communicate with the Database. The database will be on an AWS RDS so it can be accessed from any device so there is no version problems. The user will interact with the application through a SPA that will be dynamically altered with Angular. 
+   We will provide an application with a fully functional application with a frontend made with Angular, and a backend made with Java8, Spring, and Hibernate to communicate with the Database. The database will be on an AWS RDS so it can be accessed from any device so there is no version problems. The user will interact with the application through a SPA that will be dynamically altered with Angular. The customer and professional will have different login pages but customer will be able to create account while professional will not. Customer will be able to generate and get Vaccine status from QR codes. The professional will be able to update customer medical information, and get statistics from the database and show it with pie charts. 
 
 ## User stories
 
-   
+   The customer can login, create account and link it with medical information, get vaccine status, generate QR code with vaccine status, and get other customers infomation from a QR code. The professional can login, update customer medical information, get statisics by full database or by location and will be shown in pie charts.
 
 ## Tech Stack
 
