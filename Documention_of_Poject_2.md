@@ -1,6 +1,6 @@
 # Project 2 Documentation
 
-## Project name: Vaccine Tracker 
+## Project name: Vaccine Tracker
 
 By Abeil Adilow, Emilio Barajas, Anthony Escalante, Phuc Huynh 
 
@@ -10,24 +10,37 @@ By Abeil Adilow, Emilio Barajas, Anthony Escalante, Phuc Huynh
 
 ## MVP
 
-   We will provide an application with a fully functional application with a frontend made with Angular, and a backend made with Java8, Spring, and Hibernate to communicate with the Database. The database will be on an AWS RDS so it can be accessed from any device so there is no version problems. The user will interact with the application through a SPA that will be dynamically altered with Angular. The customer and professional will have different login pages but customer will be able to create account while professional will not. Customer will be able to generate and get Vaccine status from QR codes. The professional will be able to update customer medical information, and get statistics from the database and show it with pie charts. 
+   We will provide an application with a fully functional application with a frontend made with Angular, and a backend made with Java8, Spring, and Hibernate to communicate with the Database. The database will be on an AWS RDS so it can be accessed from any device so there is no version problems. The user will interact with the application through a SPA that will be dynamically altered with Angular. The customer and professional will have different login pages but customer will be able to create account while professional will not. Customer will be able to generate and get Vaccine status from QR codes. The professional will be able to update customer medical information, and get statistics from the database and show it with pie charts in the html. 
 
 ## User stories
 
-   The customer can login, create account and link it with medical information, get vaccine status, generate QR code with vaccine status, and get other customers infomation from a QR code. The professional can login, update customer medical information, get statisics by full database or by location and will be shown in pie charts.
+   Customer:
+	Login 
+	Create account and link it with medical information
+	Retrive email if forgoten with SSN for secutity
+	Change password
+	Get vaccine status
+	Generate QR code with vaccine status
+	Get other customers infomation from a QR code
+
+   Professional:
+	Login
+	Update customer medical information
+	Get statisics by full database or by location and will be shown in pie charts
 
 ## Tech Stack
 
 * Frontend 
    o HTML/CSS/Bootstrap
    o Angular
+   o TypeScript
 * Backend
    o Java8
    o Spring
    o Hibernate/JPA
    o Swagger
 * Database 
-   o PostgreSQL/H2
+   o PostgreSQL
 * Devops
    o Jenkins 
    o Git
@@ -41,6 +54,7 @@ By Abeil Adilow, Emilio Barajas, Anthony Escalante, Phuc Huynh
 * Testing
    o Junit 
    o Mockito
+   o log4J
    o Jasmine, Karma
    o Jacoco
    o Postman
