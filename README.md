@@ -14,19 +14,19 @@ By Abeil Adilow, Emilio Barajas, Anthony Escalante, Phuc Huynh
 
 ## User stories
 
-   Customer:
-	- Login 
-	- Create account and link it with medical information
-	- Retrive email if forgoten with SSN for secutity
-	- Change password
-	- Get vaccine status
-	- Generate QR code with vaccine status
-	- Get other customers infomation from a QR code
+* Customer:
+   - Login 
+   - Create account and link it with medical information
+   - Retrive email if forgoten with SSN for secutity
+   - Change password
+   - Get vaccine status
+   - Generate QR code with vaccine status
+   - Get other customers infomation from a QR code
 
-   Professional:
-	- Login
-	- Update customer medical information
-	- Get statisics by full database or by location and will be shown in pie charts
+* Professional:
+   - Login
+   - Update customer medical information
+   - Get statisics by full database or by location and will be shown in pie charts
 
 ## Tech Stack
 
