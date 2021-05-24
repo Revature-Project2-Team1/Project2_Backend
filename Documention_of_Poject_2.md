@@ -32,31 +32,30 @@ By Abeil Adilow, Emilio Barajas, Anthony Escalante, Phuc Huynh
 ## Tech Stack
 
 * Frontend 
-   o HTML/CSS/Bootstrap
-   o Angular
-   o TypeScript
+   - HTML/CSS/Bootstrap
+   - Angular
+   - TypeScript
 * Backend
-   o Java8
-   o Spring
-   o Hibernate/JPA
-   o Swagger
+   - Java8
+   - Spring
+   - Hibernate/JPA
+   - Swagger
 * Database 
-   o PostgreSQL
+   - PostgreSQL
 * Devops
-   o Jenkins 
-   o Git
-   o Gradle
+   - Jenkins 
+   - Git
+   - Gradle
 * Agile Scrum
-   o Trello
+   - Trello
 * AWS
-   o RDS
-   o S3
-   o EC2
+   - RDS
+   - S3
+   - EC2
 * Testing
-   o Junit 
-   o Mockito
-   o log4J
-   o Jasmine, Karma
-   o Jacoco
-   o Postman
-
+   - Junit 
+   - Mockito
+   - log4J
+   - Jasmine, Karma
+   - Jacoco
+   - Postman
