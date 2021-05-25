@@ -11,18 +11,13 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @ToString
-public class Clinic {
+public class Provider extends User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "clinic_id")
-    private String clinicId;
-
-    @Column(name = "clinic_site")
-    private String clinicSite;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "address_id")
-    private Address address ;
-
+    @Column(name = "provider_id")
+    private int providerId;
+    @OneToMany
+    @JoinColumn(name = "clinic_id")
+    private Clinic clinic;
 }

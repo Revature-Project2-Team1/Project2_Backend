@@ -11,12 +11,11 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @ToString
-public class Customer extends User{
+public class Patient extends User{
 
     @Id
-    @Column(name = "customer_ssn")
+    @Column(name = "patient_ssn")
     private String customerSSN;
-
     private String status;
     @Column(name = "vaccine_type")
     private String vaccineType;
