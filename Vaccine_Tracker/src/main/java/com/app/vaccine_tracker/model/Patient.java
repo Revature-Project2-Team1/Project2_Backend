@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @ToString
-public class Patient extends User{
+public class Patient {
 
     @Id
     @Column(name = "patient_ssn")
@@ -22,14 +22,5 @@ public class Patient extends User{
     private String dob;
     private String lot;
     @ManyToOne
-    @JoinColumn(name = "address_id")
     private Address address;
-
-
-
-
-
-
-
-
 }

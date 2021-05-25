@@ -5,19 +5,21 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table
 @Data
 @NoArgsConstructor
 @ToString
-public class Provider extends User {
+public class Provider{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "provider_id")
-    private int providerId;
-    @OneToMany
-    @JoinColumn(name = "clinic_id")
-    private Clinic clinic;
+    @Column(name = "provider_email")
+    private String  providerEmail;
+    @OneToMany(mappedBy = "provider")
+    private List<Clinic> clinicList = new ArrayList<>();
+    @ManyToOne
+    User user = new User();
 }

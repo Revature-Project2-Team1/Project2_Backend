@@ -25,4 +25,7 @@ public class Clinic {
     @JoinColumn(name = "address_id")
     private Address address ;
 
+    @ManyToOne
+    private Provider provider;
+
 }
