@@ -20,13 +20,18 @@ public class User {
     @Id
     @Email(message = "Invalid email")
     private String email;
-
     @Column(name ="fullname", nullable = false)
     private String fullName;
     @Column(nullable = false)
     private  String password;
     @Column(unique = true, nullable = false)
-    @OneToOne(fetch = FetchType.LAZY)
+    private String ssn;
+
+    @OneToOne
+    @JoinColumn(name ="provider_email")
+    private  Provider provider;
+
+    @OneToOne
     @JoinColumn(name = "patient_ssn")
     private Patient patient;
 

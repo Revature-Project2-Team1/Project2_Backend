@@ -15,11 +15,15 @@ import java.util.List;
 @ToString
 public class Provider{
 
-    @Id
     @Column(name = "provider_email")
     private String  providerEmail;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "provider_id")
+    private int providerId;
+
     @OneToMany(mappedBy = "provider")
     private List<Clinic> clinicList = new ArrayList<>();
-    @ManyToOne
-    User user = new User();
+
 }
