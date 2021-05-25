@@ -23,9 +23,12 @@ public class Clinic {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id")
+<<<<<<< HEAD
     private Address address;
 
+=======
+    private Address address ;
+>>>>>>> 4b2b232b763971a4c01a8da1d4d6969bc30010fe
     @ManyToOne
     private Provider provider;
-
 }
