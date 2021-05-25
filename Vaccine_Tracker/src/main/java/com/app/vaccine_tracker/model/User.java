@@ -19,8 +19,11 @@ public class User {
 
     @Id
     @Email(message = "Invalid email")
-    private String email;
 
+    private String email;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "provider_email")
+    private Provider provider;
     @Column(name ="fullname", nullable = false)
     private String fullName;
     @Column(nullable = false)
