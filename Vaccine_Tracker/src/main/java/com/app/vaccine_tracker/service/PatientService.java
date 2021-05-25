@@ -4,5 +4,5 @@ import com.app.vaccine_tracker.model.Patient;
 
 public interface PatientService {
 
-    public Patient addConsumer(Patient customer);
+    public Patient addPatient(Patient customer);
 }

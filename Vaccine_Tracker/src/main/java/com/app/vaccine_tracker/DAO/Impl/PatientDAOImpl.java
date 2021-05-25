@@ -17,9 +17,7 @@ public class PatientDAOImpl implements PatientDAO {
     }
 
     @Override
-    public Patient addCustomer(Patient patient) {
-        String sql = "";
+    public Patient addPatient(Patient patient) {
         return null;
     }
-
 }
