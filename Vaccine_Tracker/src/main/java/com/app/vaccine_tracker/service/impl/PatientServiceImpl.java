@@ -1,11 +1,9 @@
 package com.app.vaccine_tracker.service.impl;
 
-import com.app.vaccine_tracker.DAO.CustomerDAO;
 import com.app.vaccine_tracker.model.Patient;
-import com.app.vaccine_tracker.service.CustomerService;
-import org.springframework.web.client.RestTemplate;
+import com.app.vaccine_tracker.service.PatientService;
 
-public class CustomerServiceImpl implements CustomerService {
+public class PatientServiceImpl implements PatientService {
     @Override
     public Patient addConsumer(Patient customer) {
         return null;
