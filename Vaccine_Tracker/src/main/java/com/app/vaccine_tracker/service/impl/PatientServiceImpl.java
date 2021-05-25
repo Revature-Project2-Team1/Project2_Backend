@@ -12,7 +12,7 @@ public class PatientServiceImpl implements PatientService {
 
 /*    private String url = "http://localhost:9000/customer/";
     private RestTemplate restTemplate=new RestTemplate();
-    private CustomerDAO customerDAO;
+    private PatientDAO patientDAO;
 
     @Override
     public Patient addConsumer(Patient patient) {

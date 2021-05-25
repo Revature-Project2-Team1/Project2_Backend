@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class CustomerController {
 
     /*@Autowired
-    private CustomerService customerService;
+    private PatientService patientService;
 
-    @PostMapping("/customer")
-    public Patient addCustomer(Patient patient){
-        return customerService.addConsumer(patient);
-    }
+    @PostMapping("/patient")
+    public Patient addPatient(Patient patient){
+        return customerService.addPatient(patient);
+    }*/
  }
