@@ -1,7 +1,7 @@
-package com.app.vaccine_tracker.DAO.Impl;
+package com.app.vaccine_tracker.repository.impl;
 
-import com.app.vaccine_tracker.DAO.PatientDAO;
 import com.app.vaccine_tracker.model.Patient;
+import com.app.vaccine_tracker.repository.PatientDAO;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;

@@ -13,18 +13,15 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @ToString
-public class Provider extends User {
-
-    @Column(name = "provider_email")
-    private String  providerEmail;
+public class Provider {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "provider_id")
     private int providerId;
+    @Column(name = "provider_email")
+    private String  providerEmail;
+
     @OneToMany(mappedBy = "provider")
     private List<Clinic> clinicList = new ArrayList<>();
-    @OneToMany
-    @JoinColumn(name = "clinic_id")
-    private Clinic clinic;
 
 }

@@ -19,6 +19,15 @@ repositories {
 }
 
 dependencies {
+
+    implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+    runtimeOnly 'com.h2database:h2'
+    //implementation group:'org.postgresql', name: 'postgresql', version:'42.2.18'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    runtimeOnly 'org.postgresql:postgresql'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
     // https://mvnrepository.com/artifact/org.hibernate/hibernate-validator
     implementation group: 'org.hibernate', name: 'hibernate-validator', version: '4.3.1.Final'
     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'

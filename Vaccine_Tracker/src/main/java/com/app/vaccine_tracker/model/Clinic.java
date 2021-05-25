@@ -26,4 +26,5 @@ public class Clinic {
     private Address address ;
     @ManyToOne
     private Provider provider;
+
 }
