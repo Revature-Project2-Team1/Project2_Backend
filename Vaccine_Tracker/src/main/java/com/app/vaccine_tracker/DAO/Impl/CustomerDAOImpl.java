@@ -1,7 +1,7 @@
 package com.app.vaccine_tracker.DAO.Impl;
 
 import com.app.vaccine_tracker.DAO.CustomerDAO;
-import com.app.vaccine_tracker.model.Customer;
+import com.app.vaccine_tracker.model.Patient;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
@@ -17,8 +17,9 @@ public class CustomerDAOImpl implements CustomerDAO {
     }
 
     @Override
-    public Customer addCustomer(Customer customer) {
+    public Patient addCustomer(Patient patient) {
         String sql = "";
         return null;
     }
+
 }
