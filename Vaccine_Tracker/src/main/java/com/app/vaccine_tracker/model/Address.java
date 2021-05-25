@@ -14,7 +14,7 @@ import java.util.List;
 public class Address {
 
     @Id
-    @Column(name = "address_id")
+    @Column(name = "id")
     private int addressId;
 
     @Column(name = "street")
