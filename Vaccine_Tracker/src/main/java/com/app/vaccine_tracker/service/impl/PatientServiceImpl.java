@@ -4,8 +4,9 @@ import com.app.vaccine_tracker.model.Patient;
 import com.app.vaccine_tracker.service.PatientService;
 
 public class PatientServiceImpl implements PatientService {
+
     @Override
-    public Patient addConsumer(Patient customer) {
+    public Patient addPatient(Patient customer) {
         return null;
     }
 
