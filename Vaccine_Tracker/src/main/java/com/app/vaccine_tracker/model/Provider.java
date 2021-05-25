@@ -3,6 +3,7 @@ package com.app.vaccine_tracker.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -16,12 +17,14 @@ import java.util.List;
 public class Provider {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "provider_id")
+    @Column(name = "id")
     private int providerId;
-    @Column(name = "provider_email")
+    @Column(name = "provider_email", unique = true)
+    @Email(message = "invaid")
     private String  providerEmail;
-
     @OneToMany(mappedBy = "provider")
     private List<Clinic> clinicList = new ArrayList<>();
+    @Column(name ="provider_name")
+    private String providerFullName;
 
 }

@@ -21,5 +21,8 @@ private int dateId;
 
 @DateTimeFormat(pattern = "dd/MM/yyyy")
 private String date;
+
+@ManyToOne
+private  Patient patient;
 }
 
