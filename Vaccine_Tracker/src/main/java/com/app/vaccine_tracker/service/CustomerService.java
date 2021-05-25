@@ -1,8 +1,8 @@
 package com.app.vaccine_tracker.service;
 
-import com.app.vaccine_tracker.model.Customer;
+import com.app.vaccine_tracker.model.Patient;
 
 public interface CustomerService {
 
-    public Customer addConsumer(Customer customer);
+    public Patient addConsumer(Patient customer);
 }

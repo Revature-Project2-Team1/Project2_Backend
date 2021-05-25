@@ -1,7 +1,7 @@
 package com.app.vaccine_tracker.service.impl;
 
 import com.app.vaccine_tracker.DAO.CustomerDAO;
-import com.app.vaccine_tracker.model.Customer;
+import com.app.vaccine_tracker.model.Patient;
 import com.app.vaccine_tracker.service.CustomerService;
 import org.springframework.web.client.RestTemplate;
 
@@ -12,7 +12,7 @@ public class CustomerServiceImpl implements CustomerService {
     private CustomerDAO customerDAO;
 
     @Override
-    public Customer addConsumer(Customer customer) {
-        return restTemplate.postForObject(url, customerDAO.addCustomer(customer), Customer.class);
+    public Patient addConsumer(Patient patient) {
+        return restTemplate.postForObject(url, customerDAO.addCustomer(patient), Patient.class);
     }
 }
