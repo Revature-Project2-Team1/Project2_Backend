@@ -18,11 +18,6 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer addConsumer(Customer customer) {
-<<<<<<< HEAD
         return restTemplate.postForObject(url, customer, Customer.class);
     }*/
-=======
-        return restTemplate.postForObject(url, customerDAO.addCustomer(customer), Customer.class);
-    }
->>>>>>> 4b2b232b763971a4c01a8da1d4d6969bc30010fe
 }
