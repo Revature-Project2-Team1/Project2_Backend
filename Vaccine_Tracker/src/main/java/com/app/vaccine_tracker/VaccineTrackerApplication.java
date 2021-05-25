@@ -13,6 +13,7 @@ public class VaccineTrackerApplication {
     public static void main(String[] args) {
         SpringApplication.run(VaccineTrackerApplication.class, args);
 
+
     }
 
 }

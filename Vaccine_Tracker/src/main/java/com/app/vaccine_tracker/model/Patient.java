@@ -16,17 +16,19 @@ import java.util.List;
 public class Patient {
 
     @Id
-    @Column(name = "patient_ssn")
+    @Column(name = "ssn")
     private String customerSSN;
     private String status;
     @Column(name = "vaccine_type")
     private String vaccineType;
     private String dob;
     private String lot;
+    @Column(name = "fullname")
+    private String fullName;
     @ManyToOne
     private Address address;
 
-    @OneToMany
+    @OneToMany(mappedBy = "patient")
     private List<Date> dateList = new ArrayList<>();
 
 
