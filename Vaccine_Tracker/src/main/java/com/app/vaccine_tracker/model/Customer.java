@@ -5,5 +5,5 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Consumer extends User{
+public class Customer extends User{
 }
