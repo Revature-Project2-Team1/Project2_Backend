@@ -1,4 +1,4 @@
-package com.app.vaccine_tracker.DAO;
+package com.app.vaccine_tracker.dao;
 
 import com.app.vaccine_tracker.model.Patient;
 
