@@ -30,7 +30,18 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
 }
-
+jar {
+    archiveBaseName = 'Project2'
+    archiveVersion = '1.0'
+    manifest {
+        attributes(
+                'Main-Class': 'com.app.vaccine_tracker.VaccineTrackerApplication'
+        )
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
 test {
     useJUnitPlatform()
 }
