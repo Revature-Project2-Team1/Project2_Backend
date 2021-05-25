@@ -4,6 +4,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table
@@ -16,7 +18,7 @@ public class Address {
     private int addressId;
 
     @Column(name = "street")
-    private String Street;
+    private String street;
 
     @Column(name = "city")
     private String city;
@@ -26,5 +28,8 @@ public class Address {
 
     @Column(name = "zip")
     private int zip;
+
+    @OneToMany(mappedBy = "address")
+    private List<Patient> patientList = new ArrayList<>();
 
 }
