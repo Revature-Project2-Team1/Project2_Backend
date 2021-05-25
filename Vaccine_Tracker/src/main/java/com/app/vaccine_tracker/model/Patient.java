@@ -23,4 +23,6 @@ public class Patient {
     private String lot;
     @ManyToOne
     private Address address;
+
+
 }
