@@ -38,9 +38,9 @@ jar {
                 'Main-Class': 'com.app.vaccine_tracker.VaccineTrackerApplication'
         )
     }
-    from {
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
+//    from {
+//        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+//    }
 }
 test {
     useJUnitPlatform()
