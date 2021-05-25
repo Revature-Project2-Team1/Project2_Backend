@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @ToString
-public class Customer extends User{
+public class Customer extends User {
 
     @Id
     @Column(name = "customer_ssn")
@@ -25,3 +25,4 @@ public class Customer extends User{
     @ManyToOne
     @JoinColumn(name = "address_id")
     private Address address;
+}
