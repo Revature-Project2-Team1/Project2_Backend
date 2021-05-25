@@ -23,14 +23,4 @@ public class Patient {
     private String lot;
     @ManyToOne
     private Address address;
-<<<<<<< HEAD
 }
-=======
-
-
-
-
-
-
-}
->>>>>>> 7425d2e088d21747e0fffe493d84d8927f7f5b4c
