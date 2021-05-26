@@ -20,12 +20,10 @@ public class PatientCredential {
     @OneToOne
     @JoinColumn(name = "ssn")
     private Patient patient;
-    @Column(nullable = false, unique = true)
+    @Column(unique = true)
     private String username;
-    @Column(nullable = false, unique = true)
+    @Column(unique = true)
     @Email(message = "invaid input")
     private String email;
     private String password;
-
-
 }
