@@ -12,5 +12,4 @@ public class PieChart {
     private  float unvaccinatedNum;
     private  float fullyVaccinaedNum;
     private  float partialVaccinatedNum;
-
 }
