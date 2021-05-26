@@ -3,6 +3,7 @@ package com.app.vaccine_tracker.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -18,18 +19,14 @@ public class Patient {
     @Id
     @Column(name = "ssn")
     private String customerSSN;
-    private String status;
-    @Column(name = "vaccine_type")
-    private String vaccineType;
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @Column(nullable = false)
     private String dob;
-    private String lot;
-    @Column(name = "fullname")
+    @Column(name = "fullname", nullable = false)
     private String fullName;
+    private String status;
     @ManyToOne
     private Address address;
-
     @OneToMany(mappedBy = "patient")
-    private List<Date> dateList = new ArrayList<>();
-
-
+    List<VaccineRecord> vaccineRecordList = new ArrayList<>();
 }
