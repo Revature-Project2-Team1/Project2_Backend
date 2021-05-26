@@ -16,7 +16,7 @@ public class ProviderCredential {
     private int id;
 
     @OneToOne
-    @JoinColumn(name = "provider_email")
+    @JoinColumn(name = "provider_id")
     private Provider provider;
 
     @Column(unique = true)
