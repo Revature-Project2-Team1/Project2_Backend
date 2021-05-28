@@ -13,7 +13,7 @@ public class PatientController {
     @Autowired
     private PatientService patientService;
 
-    @GetMapping("/patient/login-username/{username}/{password}")
+    @GetMapping("/patient/username-login/{username}/{password}")
     @ExceptionHandler(UserException.class)
     public ResponseEntity<Object> PatientCredentialValidatorWithUsername(@PathVariable String username, @PathVariable String password){
         try {
@@ -23,7 +23,7 @@ public class PatientController {
         }
     }
 
-    @GetMapping("/patient/login/{email}/{password}")
+    @GetMapping("/patient/emaillogin/{email}/{password}")
     @ExceptionHandler(UserException.class)
     public ResponseEntity<Object> PatientCredentialValidatorWithEmail(@PathVariable String email, @PathVariable String password){
         try {

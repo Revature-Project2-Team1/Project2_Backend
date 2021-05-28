@@ -2,7 +2,6 @@ package com.app.vaccine_tracker.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -13,7 +12,6 @@ import java.util.List;
 @Table
 @Data
 @NoArgsConstructor
-@ToString
 public class Patient {
 
     @Id
@@ -25,8 +23,8 @@ public class Patient {
     @Column(name = "fullname", nullable = false)
     private String fullName;
     private String status;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Address address;
-    @OneToMany(mappedBy = "patient")
+    @OneToMany(mappedBy = "patient", fetch = FetchType.LAZY)
     List<VaccineRecord> vaccineRecordList = new ArrayList<>();
 }

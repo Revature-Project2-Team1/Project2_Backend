@@ -14,7 +14,6 @@ import java.util.Date;
 @Entity
 @Data
 @NoArgsConstructor
-@ToString
 public class VaccineRecord {
 
     @Id
