@@ -2,21 +2,23 @@ package com.app.vaccine_tracker.service.impl;
 
 import com.app.vaccine_tracker.model.Patient;
 import com.app.vaccine_tracker.service.PatientService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PatientServiceImpl implements PatientService {
 
+    @Autowired
+    private PatientService patientService;
+
+
     @Override
-    public Patient addPatient(Patient customer) {
+    public Patient PatientCredentialValidatorWithUsername(String username, String password, String ssn) {
         return null;
     }
 
-/*    private String url = "http://localhost:9000/customer/";
-    private RestTemplate restTemplate=new RestTemplate();
-    private PatientDAO patientDAO;
-
     @Override
-    public Patient addConsumer(Patient patient) {
-        return restTemplate.postForObject(url, customerDAO.addCustomer(patient), Patient.class);
-    }*/
-
+    public Patient PatientCredentialValidatorWithEmail(String email, String password, String ssn) {
+        return null;
+    }
 }
