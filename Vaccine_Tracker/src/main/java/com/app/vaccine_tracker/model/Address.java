@@ -2,6 +2,7 @@ package com.app.vaccine_tracker.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.context.annotation.Lazy;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ public class Address {
     private int zip;
 
     @OneToMany(mappedBy = "address")
+    @Lazy
     private List<Patient> patientList = new ArrayList<>();
 
 }
