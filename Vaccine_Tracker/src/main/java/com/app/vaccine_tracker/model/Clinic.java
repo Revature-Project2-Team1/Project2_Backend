@@ -2,16 +2,12 @@ package com.app.vaccine_tracker.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
-import org.springframework.context.annotation.Lazy;
-
 import javax.persistence.*;
 
 @Entity
 @Table
 @Data
 @NoArgsConstructor
-@ToString
 public class Clinic {
 
     @Id
@@ -26,7 +22,6 @@ public class Clinic {
     @JoinColumn(name = "address_id")
     private Address address ;
     @ManyToOne
-    @Lazy
     private Provider provider;
 
 }

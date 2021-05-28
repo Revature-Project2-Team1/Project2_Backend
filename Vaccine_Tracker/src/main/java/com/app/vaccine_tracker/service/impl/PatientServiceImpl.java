@@ -7,6 +7,8 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 
 @Service
 public class PatientServiceImpl implements PatientService {
@@ -17,19 +19,13 @@ public class PatientServiceImpl implements PatientService {
 
 
     @Override
-    public PatientCredential PatientCredentialValidatorWithUsername(String username, String password) {
-        PatientCredential patientCredential = patientCredsRepository.findByUsername(username);
-        System.out.println(patientCredential.getUsername());
-        try {
-            if (patientCredential.getPassword().equals(password) && patientCredential.getUsername().equals(username)) {
-                return patientCredential;
-            }else{
-                throw new UserException("Account is not found");
-            }
-        }catch (UserException e){
-            vaxify.error(e);
-        }
-        return patientCredential;
+    public PatientCredential PatientCredentialValidatorWithUsername(String username, String password) throws UserException {
+        Optional<PatientCredential> optional = patientCredsRepository.findByUsername(username);
+              if (optional.isPresent()) {
+                  return optional.get();
+              } else {
+                  throw new UserException("Account is not found");
+              }
     }
 
     @Override
