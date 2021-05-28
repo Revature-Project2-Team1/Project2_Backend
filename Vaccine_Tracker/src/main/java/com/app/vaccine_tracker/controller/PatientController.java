@@ -8,13 +8,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:9000")
 public class PatientController {
 
     @Autowired
     private PatientService patientService;
 
-    @GetMapping("/patient/login/{username}/{password}")
+    @GetMapping("/patient/login-username/{username}/{password}")
     @ExceptionHandler(UserException.class)
     public ResponseEntity<Object> PatientCredentialValidatorWithUsername(@PathVariable String username, @PathVariable String password){
         try {

@@ -1,5 +1,4 @@
 package com.app.vaccine_tracker.service.impl;
-
 import com.app.vaccine_tracker.exception.UserException;
 import com.app.vaccine_tracker.model.PatientCredential;
 import com.app.vaccine_tracker.repository.PatientCredsRepository;
@@ -20,6 +19,7 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public PatientCredential PatientCredentialValidatorWithUsername(String username, String password) {
         PatientCredential patientCredential = patientCredsRepository.findByUsername(username);
+        System.out.println(patientCredential.getUsername());
         try {
             if (patientCredential.getPassword().equals(password) && patientCredential.getUsername().equals(username)) {
                 return patientCredential;
