@@ -1,11 +1,11 @@
 package com.app.vaccine_tracker.service;
 
-import com.app.vaccine_tracker.model.Patient;
+import com.app.vaccine_tracker.model.PatientCredential;
 
 public interface PatientService {
 
-   public Patient PatientCredentialValidatorWithUsername(String username, String password, String ssn);
-   public Patient PatientCredentialValidatorWithEmail(String email, String password, String ssn);
+   public PatientCredential PatientCredentialValidatorWithUsername(String username, String password);
+   public PatientCredential PatientCredentialValidatorWithEmail(String email, String password);
 
 
 }
