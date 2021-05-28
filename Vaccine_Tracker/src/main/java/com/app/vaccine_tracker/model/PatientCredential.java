@@ -25,4 +25,5 @@ public class PatientCredential {
     @Column(unique = true)
     private String email;
     private String password;
+
 }
