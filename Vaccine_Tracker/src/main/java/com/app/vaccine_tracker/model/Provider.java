@@ -9,6 +9,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Entity
 @Table
 @Data
@@ -19,12 +20,13 @@ public class Provider {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int providerId;
-    @Column(name = "provider_email", unique = true)
-    @Email(message = "invaid")
-    private String  providerEmail;
     @OneToMany(mappedBy = "provider")
     private List<Clinic> clinicList = new ArrayList<>();
     @Column(name ="provider_name")
     private String providerFullName;
+    @Column(name = "provider_email", unique = true)
+    @Email(message = "invaid")
+    private String  providerEmail;
+
 
 }
