@@ -20,9 +20,11 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public PatientCredential PatientCredentialValidatorWithUsername(String username, String password) throws UserException {
-        Optional<PatientCredential> optional = patientCredsRepository.findByUsername(username);
-              if (optional.isPresent()) {
-                  return optional.get();
+        System.out.println("username:" + username);
+        PatientCredential patientCredential = patientCredsRepository.getPatient(username);
+        System.out.println("username: " + patientCredential.getUsername());
+              if (patientCredential != null) {
+                  return patientCredential;
               } else {
                   throw new UserException("Account is not found");
               }
