@@ -2,9 +2,10 @@ package com.app.vaccine_tracker.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.validator.constraints.Email;
+//import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;
+
 
 @Entity
 @Table
