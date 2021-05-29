@@ -15,4 +15,5 @@ public interface PatientCredsRepository extends JpaRepository<PatientCredential,
     @Query("From PatientCredential Where username = ?1")
     public PatientCredential getPatient(String username);
     public PatientCredential findByEmail(String email);
+
 }
