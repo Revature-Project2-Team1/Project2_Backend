@@ -32,8 +32,7 @@ public class Address {
     @Column(name = "zip")
     private int zip;
 
-    @OneToMany(mappedBy = "address")
-    @Lazy
-    private List<Patient> patientList = new ArrayList<>();
+    @OneToMany(mappedBy = "address", fetch = FetchType.LAZY)
+    private List<Patient> patientList;
 
 }

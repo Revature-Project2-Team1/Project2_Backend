@@ -26,5 +26,5 @@ public class Patient {
     @ManyToOne(fetch = FetchType.LAZY)
     private Address address;
     @OneToMany(mappedBy = "patient", fetch = FetchType.LAZY)
-    List<VaccineRecord> vaccineRecordList = new ArrayList<>();
+    List<VaccineRecord> vaccineRecordList;
 }
