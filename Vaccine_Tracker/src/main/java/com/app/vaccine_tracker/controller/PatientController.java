@@ -19,13 +19,13 @@ import java.util.Optional;
 public class PatientController {
 
     @Autowired
-    @Lazy
 
     private PatientService patientService;
 
     @GetMapping("/patient/username-login/{username}/{password}")
-    @ExceptionHandler(UserException.class)
+    //@ExceptionHandler(UserException.class)
     public ResponseEntity<Object> PatientCredentialValidatorWithUsername(@PathVariable String username, @PathVariable String password){
+
         try {
             return new ResponseEntity<Object>(patientService.PatientCredentialValidatorWithUsername(username, password), HttpStatus.OK);
         }catch(UserException e) {
@@ -34,8 +34,10 @@ public class PatientController {
     }
 
     @GetMapping("/patient/email-login/{email}/{password}")
-    //@ExceptionHandler(UserException.class)
+    @ExceptionHandler(UserException.class)
     public ResponseEntity<Object> PatientCredentialValidatorWithEmail(@PathVariable String email, @PathVariable String password){
+        System.out.println(email);
+        System.out.println(password);
         try {
             return new ResponseEntity<Object>(patientService.PatientCredentialValidatorWithEmail(email, password), HttpStatus.OK);
         }catch(UserException e) {
