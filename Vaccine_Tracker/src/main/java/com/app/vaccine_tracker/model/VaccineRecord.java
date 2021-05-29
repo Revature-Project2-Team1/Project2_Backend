@@ -1,5 +1,8 @@
 package com.app.vaccine_tracker.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -14,6 +17,7 @@ import java.util.Date;
 @Entity
 @Data
 @NoArgsConstructor
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class VaccineRecord {
 
     @Id
@@ -27,5 +31,6 @@ public class VaccineRecord {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date date;
     @ManyToOne
+    @JsonIgnore
     private Patient patient;
 }

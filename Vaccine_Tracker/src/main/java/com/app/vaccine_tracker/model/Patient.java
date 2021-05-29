@@ -1,7 +1,10 @@
 package com.app.vaccine_tracker.model;
 
+import com.fasterxml.jackson.annotation.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -12,6 +15,7 @@ import java.util.List;
 @Table
 @Data
 @NoArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Patient {
 
     @Id
@@ -24,7 +28,9 @@ public class Patient {
     private String fullName;
     private String status;
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     private Address address;
     @OneToMany(mappedBy = "patient", fetch = FetchType.LAZY)
+    @JsonIgnore
     List<VaccineRecord> vaccineRecordList;
 }

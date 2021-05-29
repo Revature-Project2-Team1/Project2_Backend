@@ -1,5 +1,9 @@
 package com.app.vaccine_tracker.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
@@ -8,6 +12,7 @@ import javax.persistence.*;
 @Table
 @Data
 @NoArgsConstructor
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "clinicId")
 public class Clinic {
 
     @Id
@@ -20,8 +25,10 @@ public class Clinic {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id")
+    @JsonIgnore
     private Address address ;
     @ManyToOne
+    @JsonIgnore
     private Provider provider;
 
 }
