@@ -73,6 +73,4 @@ public class PatientController {
             return new ResponseEntity<Object>(e.getMessage(),HttpStatus.NOT_FOUND);
         }
     }
-
-
  }
