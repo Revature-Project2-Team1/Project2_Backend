@@ -6,6 +6,7 @@ import com.app.vaccine_tracker.repository.PatientCredsRepository;
 import com.app.vaccine_tracker.repository.PatientRepository;
 import com.app.vaccine_tracker.service.PatientService;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ import java.util.List;
 
 @Service
 public class PatientServiceImpl implements PatientService {
+    private static Logger vaxify = Logger.getLogger(PatientServiceImpl.class);
 
     @Autowired
     @Lazy
@@ -27,10 +29,14 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public PatientCredential PatientLoginWithUsername(String username, String password) {
         PatientCredential patientCredential = patientCredsRepository.findByUsername(username);
-        if (patientCredential == null) throw new UserException("Account is not found");
+        if (patientCredential == null) {
+            vaxify.warn("Account is not found");
+            throw new UserException("Account is not found");
+        }
         if (patientCredential.getUsername().equals(username) && patientCredential.getPassword().equals(password)) {
             return patientCredential;
         } else {
+            vaxify.warn("Invalid username or password");
             throw new UserException("Invalid username or password");
         }
     }
@@ -38,11 +44,15 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public PatientCredential PatientLoginWithEmail(String email, String password) {
         PatientCredential patientCredential = patientCredsRepository.findByEmail(email);
-        if (patientCredential == null) throw new UserException("Account is not found");
+        if (patientCredential == null) {
+            vaxify.warn("Account is not found");
+            throw new UserException("Account is not found");
+        }
         System.out.println(patientCredential.getPassword());
         if (patientCredential.getPassword().equals(password) && patientCredential.getEmail().equals(email)) {
             return patientCredential;
         } else {
+            vaxify.warn("Invalid username or password");
             throw new UserException("Invalid email or password.");
         }
     }

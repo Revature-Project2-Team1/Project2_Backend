@@ -16,18 +16,20 @@ public class ProviderServiceImpl implements ProviderService {
 
     private ProviderCredsRepository providerCredsRepository;
 
-    @Override
+    @Overridez
     public ProviderCredential ProviderCredentialValidatorWithUsername(String username, String password) {
-        Optional<ProviderCredential> optional = providerCredsRepository.findByUsername(username);
+        ProviderCredential providerCredential = providerCredsRepository.findByUsername(username);
         try {
-            if (optional.get().getPassword().equals(password) && optional.get().getUsername().equals(username)) {
-                return optional.get();
+            System.out.println(providerCredential.getUsername()+" password "+providerCredential.getPassword());
+            if (providerCredential.getPassword().equals(password) && providerCredential.getUsername().equals(username)) {
+                return providerCredential;
             }else{
+                vaxify.warn("Account is not found");
                 throw new UserException("Account is not found");
             }
         }catch (UserException e){
             vaxify.error(e);
         }
-        return optional.get();
+        return providerCredential;
     }
 }
