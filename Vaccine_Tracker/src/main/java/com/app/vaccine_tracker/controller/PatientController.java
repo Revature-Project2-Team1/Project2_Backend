@@ -64,14 +64,10 @@ public class PatientController {
         }
     }
 
-    @PutMapping("/patient/updatepassword/{password}/{email}")
+    @GetMapping("/patient/updatepassword/{password}/{email}")
     //@ExceptionHandler(UserException.class)
-    public ResponseEntity<Object> updatePassword(@PathVariable String password, @PathVariable String email){
-        try {
-            return new ResponseEntity<Object>(patientService.updatePassword(email, password), HttpStatus.OK);
-        }catch(UserException e){
-            return new ResponseEntity<Object>(e.getMessage(),HttpStatus.NOT_FOUND);
-        }
+    public void updatePassword(@PathVariable String password, @PathVariable String email){
+        patientService.updatePassword(email, password);
     }
 
 
