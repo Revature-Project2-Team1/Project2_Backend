@@ -5,10 +5,10 @@ import com.app.vaccine_tracker.model.PatientCredential;
 import com.app.vaccine_tracker.repository.PatientCredsRepository;
 import com.app.vaccine_tracker.repository.PatientRepository;
 import com.app.vaccine_tracker.service.PatientService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -94,11 +94,13 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public PatientCredential updatePassword(String email, String password) {
-        PatientCredential patientCredential = patientCredsRepository.findByEmail(email);
-        patientCredential.setEmail(email);
+    @Transactional
+    public void updatePassword(String email, String password) {
+       patientCredsRepository.updatePassword(password, email);
+      /*  PatientCredential patientCredential = patientCredsRepository.findByEmail(email);
         patientCredential.setPassword(password);
-        return patientCredsRepository.save(patientCredential);
+        System.out.println(patientCredential);
+        return patientCredsRepository.save(patientCredential);*/
     }
 }
 
