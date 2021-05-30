@@ -1,0 +1,20 @@
+.card-header {
+  background-color: #343a40;
+  color: white;
+  border-radius: 10px;
+}
+.card-body {
+  background-color: #343a40;
+  border-radius: 25px;
+  padding: 20px;
+  color: white;
+}
+.card {
+  text-align: center;
+  border-radius: 25px;
+  padding: 20px;
+  background-color: #343a40;
+}
+.container {
+  width: 50%;
+}

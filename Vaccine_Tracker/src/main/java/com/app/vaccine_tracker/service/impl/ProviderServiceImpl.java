@@ -16,7 +16,7 @@ public class ProviderServiceImpl implements ProviderService {
 
     private ProviderCredsRepository providerCredsRepository;
 
-    @Overridez
+    @Override
     public ProviderCredential ProviderCredentialValidatorWithUsername(String username, String password) {
         ProviderCredential providerCredential = providerCredsRepository.findByUsername(username);
         try {
