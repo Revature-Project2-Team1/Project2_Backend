@@ -69,6 +69,4 @@ public class PatientController {
     public void updatePassword(@PathVariable String password, @PathVariable String email){
         patientService.updatePassword(email, password);
     }
-
-
  }
