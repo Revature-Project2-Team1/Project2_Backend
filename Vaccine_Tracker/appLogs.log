@@ -4,3 +4,4 @@
 [INFO]    - {com.app.vaccine_tracker.service.impl.VaccineRecordServiceImpl}    unvaccinated         May-30-21 Sunday CDT 20:19:08      
 [INFO]    - {com.app.vaccine_tracker.service.impl.VaccineRecordServiceImpl}    unvaccinated         May-30-21 Sunday CDT 20:19:08      
 [INFO]    - {com.app.vaccine_tracker.service.impl.VaccineRecordServiceImpl}    unvaccinated         May-30-21 Sunday CDT 20:21:46      
+[INFO]    - {com.app.vaccine_tracker.service.impl.VaccineRecordServiceImpl}    partial         May-30-21 Sunday CDT 21:53:58      
