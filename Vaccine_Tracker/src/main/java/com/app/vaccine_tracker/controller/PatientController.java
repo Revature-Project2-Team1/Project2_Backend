@@ -1,26 +1,20 @@
 package com.app.vaccine_tracker.controller;
 
 import com.app.vaccine_tracker.exception.UserException;
-import com.app.vaccine_tracker.model.Patient;
-import com.app.vaccine_tracker.model.PatientCredential;
+
 import com.app.vaccine_tracker.service.PatientService;
 
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Lazy;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class PatientController {
 
     @Autowired
-
     private PatientService patientService;
 
     @GetMapping("/patient/username-login/{username}/{password}")
@@ -44,9 +38,10 @@ public class PatientController {
         }
     }
 
-    @PostMapping("/patient/register/{email}/{username}/{password}/{ssn}")
+    @GetMapping("/patient/register/{email}/{username}/{password}/{ssn}")
     //@ExceptionHandler(UserException.class)
     public ResponseEntity<Object> registerPatientAccount(@PathVariable String email, @PathVariable String username, @PathVariable String password, @PathVariable String ssn){
+        System.out.println(email + username + password +ssn);
         try {
             return new ResponseEntity<Object>(patientService.registerPatientAccount(email, username, password, ssn), HttpStatus.OK);
         }catch(UserException e){

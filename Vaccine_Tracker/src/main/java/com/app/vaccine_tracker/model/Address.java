@@ -3,12 +3,7 @@ package com.app.vaccine_tracker.model;
 import com.fasterxml.jackson.annotation.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
-import org.springframework.context.annotation.Lazy;
-
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 

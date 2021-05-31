@@ -1,9 +1,6 @@
 package com.app.vaccine_tracker.model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
@@ -13,6 +10,8 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 //@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "clinicId")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+
 public class Clinic {
 
     @Id
