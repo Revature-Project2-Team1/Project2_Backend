@@ -5,3 +5,4 @@
 [WARN]    - {com.app.vaccine_tracker.service.impl.PatientServiceImpl}    Account is not found         May-29-21 Saturday EDT 22:30:20      
 [WARN]    - {com.app.vaccine_tracker.service.impl.PatientServiceImpl}    Account is not found         May-29-21 Saturday EDT 22:31:17      
 [WARN]    - {com.app.vaccine_tracker.service.impl.PatientServiceImpl}    Account is not found         May-31-21 Monday EDT 12:00:34      
+
