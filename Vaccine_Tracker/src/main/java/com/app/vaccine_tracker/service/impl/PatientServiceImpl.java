@@ -94,14 +94,12 @@ public class PatientServiceImpl implements PatientService {
         PatientCredential patientCredentialTemp = patientCredsRepository.findByEmail(email);
         if(patientCredentialTemp == null) throw new UserException("Email is not found. Please try again");
         Patient patient = patientCredentialTemp.getPatient();
-        String lastFourDigits = patient.getCustomerSSN().substring(patient.getCustomerSSN().length() - 1);
+        String lastFourDigits = patient.getCustomerSSN().substring(patient.getCustomerSSN().length() - 4);
         if(lastFourDigits.equals(customerSSN)&&patientCredentialTemp.getEmail().equals(email)){
-            status= true;
+          return status= true;
         }else {
             throw new UserException("Your information is not matched");
         }
-
-        return status;
     }
 
     @Override
