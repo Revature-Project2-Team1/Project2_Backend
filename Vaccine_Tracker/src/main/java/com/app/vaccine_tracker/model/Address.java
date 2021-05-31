@@ -3,6 +3,8 @@ package com.app.vaccine_tracker.model;
 import com.fasterxml.jackson.annotation.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.util.List;
 
