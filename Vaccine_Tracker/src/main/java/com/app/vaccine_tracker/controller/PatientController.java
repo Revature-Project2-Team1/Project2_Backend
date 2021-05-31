@@ -45,7 +45,6 @@ public class PatientController {
     @GetMapping("/patient/register/{email}/{username}/{password}/{ssn}")
     //@ExceptionHandler(UserException.class)
     public ResponseEntity<Object> registerPatientAccount(@PathVariable String email, @PathVariable String username, @PathVariable String password, @PathVariable String ssn){
-        System.out.println(email + username + password +ssn);
         try {
             return new ResponseEntity<Object>(patientService.registerPatientAccount(email, username, password, ssn), HttpStatus.OK);
         }catch(UserException e){

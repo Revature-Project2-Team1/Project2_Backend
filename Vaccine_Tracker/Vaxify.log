@@ -1,0 +1,4 @@
+[WARN]    - {com.app.vaccine_tracker.service.impl.PatientServiceImpl}    Account is not found         May-31-21 Monday PDT 12:30:40      
+[WARN]    - {com.app.vaccine_tracker.service.impl.PatientServiceImpl}    Invalid username or password         May-31-21 Monday PDT 12:30:56      
+[WARN]    - {com.app.vaccine_tracker.service.impl.PatientServiceImpl}    Invalid username or password         May-31-21 Monday PDT 13:34:30      
+[WARN]    - {com.app.vaccine_tracker.service.impl.PatientServiceImpl}    Invalid username or password         May-31-21 Monday PDT 13:36:58      
