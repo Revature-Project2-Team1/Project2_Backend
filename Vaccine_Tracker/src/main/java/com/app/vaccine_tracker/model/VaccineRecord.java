@@ -29,7 +29,7 @@ public class VaccineRecord {
     private String vaccineType;
     private String lot;
     @Column(name = "date", updatable = false)
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @DateTimeFormat(pattern = "yyyy/MM/dd")
     private Date date;
     @ManyToOne
     @JsonIgnore
