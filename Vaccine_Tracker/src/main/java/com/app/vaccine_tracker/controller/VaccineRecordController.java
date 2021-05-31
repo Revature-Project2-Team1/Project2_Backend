@@ -35,6 +35,15 @@ public class VaccineRecordController {
             return new ResponseEntity<Object>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
+    @GetMapping("/patient/getAllRecords/{ssn}")
+    public ResponseEntity<Object>getAllVaccineRecordsBySSN(@PathVariable String ssn){
+        try{
+            return new ResponseEntity<Object>(vaccineRecordService.getAllVaccineRecordsBySSN(ssn), HttpStatus.OK);
+        }catch(UserException e)
+        {
+            return new ResponseEntity<Object>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
 
 }
 

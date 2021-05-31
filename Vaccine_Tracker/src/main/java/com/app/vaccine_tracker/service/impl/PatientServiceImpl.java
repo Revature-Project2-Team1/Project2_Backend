@@ -134,6 +134,14 @@ public class PatientServiceImpl implements PatientService {
     public void updatePassword(String email, String password) {
        patientCredsRepository.updatePassword(password, email);
     }
+
+    @Override
+    public Patient getStatus(String ssn) {
+        Patient patient = patientRepository.getPatientByCustomerSSN(ssn);
+        return patient;
+    }
+
+
 }
 
 
