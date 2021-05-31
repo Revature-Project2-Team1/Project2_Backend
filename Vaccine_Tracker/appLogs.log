@@ -1,7 +1,6 @@
-[INFO]    - {com.app.vaccine_tracker.service.impl.VaccineRecordServiceImpl}    Patient(customerSSN=1, dob=null, fullName=null, status=null, address=null, vaccineRecordList=null)         May-30-21 Sunday CDT 19:57:23      
-[INFO]    - {com.app.vaccine_tracker.service.impl.VaccineRecordServiceImpl}    Patient(customerSSN=1, dob=null, fullName=null, status=null, address=null, vaccineRecordList=null)         May-30-21 Sunday CDT 19:59:16      
-[INFO]    - {com.app.vaccine_tracker.service.impl.VaccineRecordServiceImpl}    unvaccinated         May-30-21 Sunday CDT 20:17:08      
-[INFO]    - {com.app.vaccine_tracker.service.impl.VaccineRecordServiceImpl}    unvaccinated         May-30-21 Sunday CDT 20:19:08      
-[INFO]    - {com.app.vaccine_tracker.service.impl.VaccineRecordServiceImpl}    unvaccinated         May-30-21 Sunday CDT 20:19:08      
-[INFO]    - {com.app.vaccine_tracker.service.impl.VaccineRecordServiceImpl}    unvaccinated         May-30-21 Sunday CDT 20:21:46      
-[INFO]    - {com.app.vaccine_tracker.service.impl.VaccineRecordServiceImpl}    partial         May-30-21 Sunday CDT 21:53:58      
+[WARN]    - {com.app.vaccine_tracker.service.impl.PatientServiceImpl}    Account is not found         May-29-21 Saturday EDT 22:25:31      
+[WARN]    - {com.app.vaccine_tracker.service.impl.PatientServiceImpl}    Account is not found         May-29-21 Saturday EDT 22:26:37      
+[WARN]    - {com.app.vaccine_tracker.service.impl.PatientServiceImpl}    Account is not found         May-29-21 Saturday EDT 22:28:54      
+[WARN]    - {com.app.vaccine_tracker.service.impl.PatientServiceImpl}    Account is not found         May-29-21 Saturday EDT 22:29:27      
+[WARN]    - {com.app.vaccine_tracker.service.impl.PatientServiceImpl}    Account is not found         May-29-21 Saturday EDT 22:30:20      
+[WARN]    - {com.app.vaccine_tracker.service.impl.PatientServiceImpl}    Account is not found         May-29-21 Saturday EDT 22:31:17      

@@ -5,16 +5,19 @@ import com.app.vaccine_tracker.model.PatientCredential;
 import com.app.vaccine_tracker.repository.PatientCredsRepository;
 import com.app.vaccine_tracker.repository.PatientRepository;
 import com.app.vaccine_tracker.service.PatientService;
+import org.apache.log4j.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 
 @Service
 public class PatientServiceImpl implements PatientService {
+    private static Logger vaxify = Logger.getLogger(PatientServiceImpl.class);
 
     @Autowired
     @Lazy
@@ -27,10 +30,14 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public PatientCredential PatientLoginWithUsername(String username, String password) {
         PatientCredential patientCredential = patientCredsRepository.findByUsername(username);
-        if (patientCredential == null) throw new UserException("Account is not found");
+        if (patientCredential == null) {
+            vaxify.warn("Account is not found");
+            throw new UserException("Account is not found");
+        }
         if (patientCredential.getUsername().equals(username) && patientCredential.getPassword().equals(password)) {
             return patientCredential;
         } else {
+            vaxify.warn("Invalid username or password");
             throw new UserException("Invalid username or password");
         }
     }
@@ -38,11 +45,15 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public PatientCredential PatientLoginWithEmail(String email, String password) {
         PatientCredential patientCredential = patientCredsRepository.findByEmail(email);
-        if (patientCredential == null) throw new UserException("Account is not found");
+        if (patientCredential == null) {
+            vaxify.warn("Account is not found");
+            throw new UserException("Account is not found");
+        }
         System.out.println(patientCredential.getPassword());
         if (patientCredential.getPassword().equals(password) && patientCredential.getEmail().equals(email)) {
             return patientCredential;
         } else {
+            vaxify.warn("Invalid username or password");
             throw new UserException("Invalid email or password.");
         }
     }
@@ -56,7 +67,7 @@ public class PatientServiceImpl implements PatientService {
         Patient patient = new Patient();
         patient.setCustomerSSN(customerSSN);
         if (patient1 == null) {
-            throw new UserException("Your SSN doesn't exist in the database. Please try again");
+            throw new UserException("Your ssn doesn't exist in the database. Please try again");
         } else {
             PatientCredential patientCredentialTemp = patientCredsRepository.findByPatient(patient);
             if (patientCredentialTemp != null) {
@@ -64,7 +75,7 @@ public class PatientServiceImpl implements PatientService {
 
             } else {
                 if(!patientCredentialList.isEmpty()) throw new UserException("This email is already registered with us");
-                if(!patientCredentialList1.isEmpty()) throw new UserException("This Username is already registered with us");
+                if(!patientCredentialList1.isEmpty()) throw new UserException("This username is already registered with us");
                 PatientCredential patientCredential = new PatientCredential();
                 patientCredential.setEmail(email);
                 patientCredential.setUsername(username);
@@ -94,11 +105,13 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public PatientCredential updatePassword(String email, String password) {
-        PatientCredential patientCredential = patientCredsRepository.findByEmail(email);
-        patientCredential.setEmail(email);
+    @Transactional
+    public void updatePassword(String email, String password) {
+       patientCredsRepository.updatePassword(password, email);
+      /*  PatientCredential patientCredential = patientCredsRepository.findByEmail(email);
         patientCredential.setPassword(password);
-        return patientCredsRepository.save(patientCredential);
+        System.out.println(patientCredential);
+        return patientCredsRepository.save(patientCredential);*/
     }
 }
 
