@@ -27,11 +27,9 @@ public class Patient {
     @Column(name = "fullname", nullable = false)
     private String fullName;
     private String status;
-    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
     private Address address;
-    @JsonIgnore
     @OneToMany(mappedBy = "patient", fetch = FetchType.LAZY)
     @JsonIgnore
     List<VaccineRecord> vaccineRecordList;

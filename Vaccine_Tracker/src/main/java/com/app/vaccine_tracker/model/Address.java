@@ -30,7 +30,7 @@ public class Address {
 
     @Column(name = "zip")
     private int zip;
-    @JsonIgnore
+
     @OneToMany(mappedBy = "address", fetch = FetchType.LAZY)
     @JsonIgnore
     private List<Patient> patientList;
