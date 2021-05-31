@@ -14,6 +14,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 //@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class PatientCredential {
 
     @Id
@@ -21,7 +22,7 @@ public class PatientCredential {
     private int id;
     @OneToOne(fetch = FetchType.LAZY)
     @JsonIgnore
-    @JoinColumn(name = "ssn", nullable = true)
+    @JoinColumn(name = "ssn")
     private Patient patient;
     @Column(unique = true, nullable = false)
     private String username;

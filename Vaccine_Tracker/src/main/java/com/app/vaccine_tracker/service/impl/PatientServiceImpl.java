@@ -56,7 +56,7 @@ public class PatientServiceImpl implements PatientService {
         Patient patient = new Patient();
         patient.setCustomerSSN(customerSSN);
         if (patient1 == null) {
-            throw new UserException("Your SSN doesn't exist in the database. Please try again");
+            throw new UserException("Your ssn doesn't exist in the database. Please try again");
         } else {
             PatientCredential patientCredentialTemp = patientCredsRepository.findByPatient(patient);
             if (patientCredentialTemp != null) {
@@ -64,7 +64,7 @@ public class PatientServiceImpl implements PatientService {
 
             } else {
                 if(!patientCredentialList.isEmpty()) throw new UserException("This email is already registered with us");
-                if(!patientCredentialList1.isEmpty()) throw new UserException("This Username is already registered with us");
+                if(!patientCredentialList1.isEmpty()) throw new UserException("This username is already registered with us");
                 PatientCredential patientCredential = new PatientCredential();
                 patientCredential.setEmail(email);
                 patientCredential.setUsername(username);
