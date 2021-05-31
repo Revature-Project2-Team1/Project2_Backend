@@ -8,7 +8,7 @@ import java.util.Date;
 public interface VaccineRecordService {
 
     //public boolean addVaccineRecord(String ssn, String vaccineType, Date date, String lot);
-    public boolean addVaccineRecord(DVR dvr);
+    public String addVaccineRecord(DVR dvr);
 
 }
 //SSN: "312312311"
