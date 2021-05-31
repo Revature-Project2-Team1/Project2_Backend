@@ -1,5 +1,6 @@
 package com.app.vaccine_tracker.service;
 
+import com.app.vaccine_tracker.model.DummyModel.DVR;
 import com.app.vaccine_tracker.model.VaccineRecord;
 
 import java.util.Date;
@@ -7,7 +8,7 @@ import java.util.Date;
 public interface VaccineRecordService {
 
     //public boolean addVaccineRecord(String ssn, String vaccineType, Date date, String lot);
-    public VaccineRecord addVaccineRecord(VaccineRecord vaccineRecord);
+    public String addVaccineRecord(DVR dvr);
 
 }
 //SSN: "312312311"
