@@ -1,8 +1,10 @@
 package com.app.vaccine_tracker.model;
 
+import com.fasterxml.jackson.annotation.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.data.jpa.repository.Modifying;
 
 
 import javax.persistence.*;
@@ -11,19 +13,21 @@ import javax.persistence.*;
 @Table
 @Data
 @NoArgsConstructor
-
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class PatientCredential {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ssn")
+    @JsonIgnore
+    @JoinColumn(name = "ssn", nullable = true)
     private Patient patient;
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String username;
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String email;
+    @Column(nullable = false)
     private String password;
 
 }
