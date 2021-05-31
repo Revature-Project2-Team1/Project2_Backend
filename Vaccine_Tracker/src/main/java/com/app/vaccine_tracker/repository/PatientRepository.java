@@ -7,5 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface PatientRepository extends JpaRepository<Patient, String> {
 
     public Patient getPatientByCustomerSSN(String customerSSN);
+    public Patient getStatusByCustomerSSN(String customerSSN);
 
 }
