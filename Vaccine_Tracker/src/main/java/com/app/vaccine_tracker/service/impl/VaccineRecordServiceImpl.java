@@ -32,13 +32,14 @@ public class VaccineRecordServiceImpl implements VaccineRecordService {
     public String addVaccineRecord(DVR dvr) {
 
         VaccineRecord vaccineRecord = new VaccineRecord();
+
         vaccineRecord.setDate(dvr.getDate());
+        vaxify.info(vaccineRecord.getDate());
         vaccineRecord.setLot(dvr.getLot());
         vaccineRecord.setVaccineType(dvr.getVaccineType());
 
         Patient patient1 = new Patient();
         patient1.setCustomerSSN(dvr.getSsn());
-
 
         try {
             if (patient1 == null) {
@@ -47,6 +48,7 @@ public class VaccineRecordServiceImpl implements VaccineRecordService {
                 Patient patient = patientRepository.getPatientByCustomerSSN(patient1.getCustomerSSN());
                 vaxify.info(patient.getStatus());
                 vaccineRecord.setPatient(patient);
+
                 if (patient.getStatus().equals("unvaccinated")) {
                     patient.setStatus("partial");
                 } else if (patient.getStatus().equals("partial")) {
