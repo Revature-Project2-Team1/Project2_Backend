@@ -1,0 +1,6 @@
+[INFO]    - {com.app.vaccine_tracker.service.impl.VaccineRecordServiceImpl}    Patient(customerSSN=1, dob=null, fullName=null, status=null, address=null, vaccineRecordList=null)         May-30-21 Sunday CDT 19:57:23      
+[INFO]    - {com.app.vaccine_tracker.service.impl.VaccineRecordServiceImpl}    Patient(customerSSN=1, dob=null, fullName=null, status=null, address=null, vaccineRecordList=null)         May-30-21 Sunday CDT 19:59:16      
+[INFO]    - {com.app.vaccine_tracker.service.impl.VaccineRecordServiceImpl}    unvaccinated         May-30-21 Sunday CDT 20:17:08      
+[INFO]    - {com.app.vaccine_tracker.service.impl.VaccineRecordServiceImpl}    unvaccinated         May-30-21 Sunday CDT 20:19:08      
+[INFO]    - {com.app.vaccine_tracker.service.impl.VaccineRecordServiceImpl}    unvaccinated         May-30-21 Sunday CDT 20:19:08      
+[INFO]    - {com.app.vaccine_tracker.service.impl.VaccineRecordServiceImpl}    unvaccinated         May-30-21 Sunday CDT 20:21:46      
