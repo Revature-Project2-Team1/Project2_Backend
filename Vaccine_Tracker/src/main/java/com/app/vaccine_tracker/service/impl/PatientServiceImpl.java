@@ -113,6 +113,14 @@ public class PatientServiceImpl implements PatientService {
         System.out.println(patientCredential);
         return patientCredsRepository.save(patientCredential);*/
     }
+
+    @Override
+    public Patient getStatus(String ssn) {
+        Patient patient = patientRepository.getPatientByCustomerSSN(ssn);
+        return patient;
+    }
+
+
 }
 
 

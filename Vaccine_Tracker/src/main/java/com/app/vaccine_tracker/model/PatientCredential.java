@@ -21,7 +21,7 @@ public class PatientCredential {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @OneToOne(fetch = FetchType.LAZY)
-    @JsonIgnore
+
     @JoinColumn(name = "ssn")
     private Patient patient;
     @Column(unique = true, nullable = false)

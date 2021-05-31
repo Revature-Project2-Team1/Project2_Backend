@@ -10,6 +10,9 @@ public interface PatientService {
    public boolean registerPatientAccount(String email, String username, String password, String customerSSN);
    public boolean validatePatientCredential(String ssn, String email);
    public void updatePassword(String email, String password);
+   public Patient getStatus(String ssn);
+
+
 
 
 }

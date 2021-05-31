@@ -12,10 +12,13 @@ import com.app.vaccine_tracker.service.VaccineRecordService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.data.repository.query.Param;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.apache.log4j.Logger;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class VaccineRecordServiceImpl implements VaccineRecordService {
@@ -65,5 +68,11 @@ public class VaccineRecordServiceImpl implements VaccineRecordService {
         {
             return "No SSN was found or invalid SSN";
         }
+    }
+
+    @Override
+    public List<VaccineRecord> getAllVaccineRecordsBySSN(String ssn) {
+        Patient patient = patientRepository.getPatientByCustomerSSN(ssn);
+        return vaccineRecordRepository.findAllByPatient(patient);
     }
 }

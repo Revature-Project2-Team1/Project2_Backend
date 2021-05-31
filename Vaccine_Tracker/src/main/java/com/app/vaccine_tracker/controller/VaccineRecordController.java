@@ -17,7 +17,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://vaccine-verification-bucket.s3-website.us-east-2.amazonaws.com","http://localhost:4200"})
 @RestController
 public class VaccineRecordController {
 
@@ -30,6 +30,15 @@ public class VaccineRecordController {
             (@RequestBody DVR dvr) {
         try {
             return new ResponseEntity<Object>(vaccineRecordService.addVaccineRecord(dvr), HttpStatus.OK);
+        }catch(UserException e)
+        {
+            return new ResponseEntity<Object>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
+    @GetMapping("/patient/getAllRecords/{ssn}")
+    public ResponseEntity<Object>getAllVaccineRecordsBySSN(@PathVariable String ssn){
+        try{
+            return new ResponseEntity<Object>(vaccineRecordService.getAllVaccineRecordsBySSN(ssn), HttpStatus.OK);
         }catch(UserException e)
         {
             return new ResponseEntity<Object>(e.getMessage(), HttpStatus.NOT_FOUND);
