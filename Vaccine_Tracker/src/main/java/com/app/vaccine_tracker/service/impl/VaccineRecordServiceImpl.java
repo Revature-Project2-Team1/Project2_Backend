@@ -28,10 +28,9 @@ public class VaccineRecordServiceImpl implements VaccineRecordService {
     private PatientRepository patientRepository;
 
 
-
     @Override
-    public boolean addVaccineRecord( DVR dvr) {
-        boolean status =false;
+    public String addVaccineRecord(DVR dvr) {
+
         VaccineRecord vaccineRecord = new VaccineRecord();
         vaccineRecord.setDate(dvr.getDate());
         vaccineRecord.setLot(dvr.getLot());
@@ -40,25 +39,29 @@ public class VaccineRecordServiceImpl implements VaccineRecordService {
         Patient patient1 = new Patient();
         patient1.setCustomerSSN(dvr.getSsn());
 
-        Patient patient = patientRepository.getPatientByCustomerSSN(patient1.getCustomerSSN());
-        vaxify.info(patient.getStatus());
-        if(patient1 == null){
-            throw new UserException("Your SSN doesn't exist in the database. Please try again");
-        }else {
-            vaccineRecord.setPatient(patient);
-            if(patient.getStatus().equals("unvaccinated")) {
-                patient.setStatus("partial");
-            }else if(patient.getStatus().equals("partial"))
-            {
-                patient.setStatus("vaccinated");
-            }else
-            {
+
+        try {
+            if (patient1 == null) {
+                throw new UserException("Your SSN doesn't exist in the database. Please try again");
+            } else {
+                Patient patient = patientRepository.getPatientByCustomerSSN(patient1.getCustomerSSN());
                 vaxify.info(patient.getStatus());
-                throw new UserException("Already Fully Vaccinate");
+                vaccineRecord.setPatient(patient);
+                if (patient.getStatus().equals("unvaccinated")) {
+                    patient.setStatus("partial");
+                } else if (patient.getStatus().equals("partial")) {
+                    patient.setStatus("vaccinated");
+                } else {
+                    vaxify.info(patient.getStatus());
+                    throw new UserException("Already Fully Vaccinated");
+                }
+                vaccineRecordRepository.save(vaccineRecord);
+                patientRepository.save(patient);
+                return "Success";
             }
-            vaccineRecordRepository.save(vaccineRecord);
-            patientRepository.save(patient);
-            return status = true;
+        }catch(NullPointerException e)
+        {
+            return "No SSN was found or invalid SSN";
         }
     }
 }

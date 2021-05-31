@@ -29,11 +29,8 @@ public class VaccineRecord {
     private String vaccineType;
     private String lot;
     @Column(name = "date", updatable = false)
-<<<<<<< HEAD
+
     @DateTimeFormat(pattern = "yyyy/MM/dd")
-=======
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
->>>>>>> 7cad742810954016a614ed72960c492a693371c6
     private Date date;
     @ManyToOne
     @JsonIgnore
