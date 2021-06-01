@@ -19,16 +19,19 @@ import java.util.List;
 public class PatientServiceImpl implements PatientService {
     private static Logger vaxify = Logger.getLogger(PatientServiceImpl.class);
 
+    public PatientServiceImpl(PatientCredsRepository patientCredsRepository, PatientRepository patientRepository) {
+        this.patientCredsRepository = patientCredsRepository;
+        this.patientRepository = patientRepository;
+    }
+
     @Autowired
     @Lazy
     private PatientCredsRepository patientCredsRepository;
-
     @Autowired
     private PatientRepository patientRepository;
 
-
     @Override
-    public Patient PatientLoginWithUsername(String username, String password) {
+    public Patient patientLoginWithUsername(String username, String password) {
         try {
 
 
@@ -53,7 +56,7 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public Patient PatientLoginWithEmail(String email, String password) {
+    public Patient patientLoginWithEmail(String email, String password) {
         try {
             PatientCredential patientCredential = patientCredsRepository.findByEmail(email);
             Patient patient = patientCredential.getPatient();

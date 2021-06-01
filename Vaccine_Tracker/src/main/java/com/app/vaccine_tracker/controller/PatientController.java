@@ -21,7 +21,7 @@ public class PatientController {
     //@ExceptionHandler(UserException.class)
     public ResponseEntity<Object> patientLoginWithUsername(@PathVariable String username, @PathVariable String password){
         try {
-            return new ResponseEntity<Object>(patientService.PatientLoginWithUsername(username, password), HttpStatus.OK);
+            return new ResponseEntity<Object>(patientService.patientLoginWithUsername(username, password), HttpStatus.OK);
         }catch(UserException e) {
             return new ResponseEntity<Object>(e.getMessage(),HttpStatus.NOT_FOUND);
         }
@@ -31,7 +31,7 @@ public class PatientController {
     //@ExceptionHandler(UserException.class)
     public ResponseEntity<Object> patientLoginWithEmail(@PathVariable String email, @PathVariable String password){
         try {
-            return new ResponseEntity<Object>(patientService.PatientLoginWithEmail(email, password), HttpStatus.OK);
+            return new ResponseEntity<Object>(patientService.patientLoginWithEmail(email, password), HttpStatus.OK);
         }catch(UserException e) {
             return new ResponseEntity<Object>(e.getMessage(),HttpStatus.NOT_FOUND);
         }
