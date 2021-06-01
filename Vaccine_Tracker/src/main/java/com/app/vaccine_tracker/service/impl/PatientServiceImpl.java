@@ -34,10 +34,8 @@ public class PatientServiceImpl implements PatientService {
     public Patient patientLoginWithUsername(String username, String password) {
         try {
 
-
             PatientCredential patientCredential = patientCredsRepository.findByUsername(username);
             Patient patient = patientCredential.getPatient();
-
 
             if (patientCredential == null) {
                 vaxify.warn("Account is not found");
