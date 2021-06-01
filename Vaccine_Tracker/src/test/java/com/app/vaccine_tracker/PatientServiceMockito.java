@@ -1,5 +1,6 @@
 package com.app.vaccine_tracker;
 import com.app.vaccine_tracker.controller.PatientController;
+import com.app.vaccine_tracker.model.Address;
 import com.app.vaccine_tracker.model.Patient;
 import com.app.vaccine_tracker.model.PatientCredential;
 import com.app.vaccine_tracker.repository.PatientCredsRepository;
@@ -18,8 +19,7 @@ public class PatientServiceMockito {
      PatientService patientService = mock(PatientService.class);
      Patient patient = new Patient();
      patient.setCustomerSSN("123-12-1234");
-     when(patientService.patientLoginWithUsername("phuch", "phucsonmy")).thenReturn(patient);
-     Assertions.assertNotNull(patientService);
+     when(patientService.patientLoginWithUsername("phuch", "phucsonmy")).thenReturn(patient);;
     }
 
     @Test

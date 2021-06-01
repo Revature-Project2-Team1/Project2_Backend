@@ -63,14 +63,14 @@ public class AddVaccineRecordTest {
     }
 
     @Test
-    public void test1() throws ParseException{
+    public void test3() throws ParseException{
         DVR dvr = new DVR();
         VaccineRecordService vaccineRecordService = mock(VaccineRecordService.class);
         when(vaccineRecordService.addVaccineRecord(dvr)).thenReturn(createDVRForTest());
         Assertions.assertNotNull(dvr);
     }
     @Test
-    public void test2() throws ParseException{
+    public void test4() throws ParseException{
         Patient patient = new Patient();
         VaccineRecordRepository vaccineRecordRepository = mock(VaccineRecordRepository.class);
         when(vaccineRecordRepository.findAllByPatient(patient)).thenReturn(createVRForTest());
