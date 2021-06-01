@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.function.Consumer;
 
 @Service
 public class QRServiceImpl implements QRService {
@@ -39,18 +40,14 @@ public class QRServiceImpl implements QRService {
     }
 
     @Override
-    public void deleteQR(String ssn){
-        Optional<QRrecord> optional=qrRepository.findById(ssn);
-        if(optional.isPresent()) {
-            qrRepository.deleteById(ssn);
-        }else {
-            throw new UserException("User has no previous QR");
-        }
+    public void deleteQR(int qr_id){
+
+            qrRepository.deleteById(qr_id);
     }
 
     @Override
-    public QRrecord checkQR(String ssn){
-        Optional<QRrecord> optional=qrRepository.findById(ssn);
+    public QRrecord checkQR(int qr_id){
+        Optional<QRrecord> optional=qrRepository.findById(qr_id);
 
         if(optional.isPresent()){
             return optional.get();
