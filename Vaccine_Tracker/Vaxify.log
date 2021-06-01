@@ -41,3 +41,5 @@
 [WARN]    - {com.app.vaccine_tracker.service.impl.PatientServiceImpl}    Invalid username or password         May-31-21 Monday PDT 22:17:20      
 [WARN]    - {com.app.vaccine_tracker.service.impl.PatientServiceImpl}    Invalid username or password         May-31-21 Monday PDT 22:22:42      
 [WARN]    - {com.app.vaccine_tracker.service.impl.PatientServiceImpl}    Invalid username or password         May-31-21 Monday PDT 22:24:21      
+[WARN]    - {com.app.vaccine_tracker.service.impl.PatientServiceImpl}    Invalid username or password         Jun-01-21 Tuesday PDT 02:04:28      
+[WARN]    - {com.app.vaccine_tracker.service.impl.PatientServiceImpl}    Invalid username or password         Jun-01-21 Tuesday PDT 02:22:45      

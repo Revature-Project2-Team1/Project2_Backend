@@ -58,6 +58,6 @@ public class PatientServiceMockito {
         Assertions.assertEquals(true,patientService.validatePatientCredential("123-12-1234", "phuch@gmail.com") );
     }
 
-    
+
 
 }
