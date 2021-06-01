@@ -12,10 +12,13 @@ import com.app.vaccine_tracker.service.VaccineRecordService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.data.repository.query.Param;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.apache.log4j.Logger;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class VaccineRecordServiceImpl implements VaccineRecordService {
@@ -32,13 +35,14 @@ public class VaccineRecordServiceImpl implements VaccineRecordService {
     public String addVaccineRecord(DVR dvr) {
 
         VaccineRecord vaccineRecord = new VaccineRecord();
+
         vaccineRecord.setDate(dvr.getDate());
+        vaxify.info(vaccineRecord.getDate());
         vaccineRecord.setLot(dvr.getLot());
         vaccineRecord.setVaccineType(dvr.getVaccineType());
 
         Patient patient1 = new Patient();
         patient1.setCustomerSSN(dvr.getSsn());
-
 
         try {
             if (patient1 == null) {
@@ -47,6 +51,7 @@ public class VaccineRecordServiceImpl implements VaccineRecordService {
                 Patient patient = patientRepository.getPatientByCustomerSSN(patient1.getCustomerSSN());
                 vaxify.info(patient.getStatus());
                 vaccineRecord.setPatient(patient);
+
                 if (patient.getStatus().equals("unvaccinated")) {
                     patient.setStatus("partial");
                 } else if (patient.getStatus().equals("partial")) {
@@ -63,5 +68,11 @@ public class VaccineRecordServiceImpl implements VaccineRecordService {
         {
             return "No SSN was found or invalid SSN";
         }
+    }
+
+    @Override
+    public List<VaccineRecord> getAllVaccineRecordsBySSN(String ssn) {
+        Patient patient = patientRepository.getPatientByCustomerSSN(ssn);
+        return vaccineRecordRepository.findAllByPatient(patient);
     }
 }
