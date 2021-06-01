@@ -9,10 +9,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-<<<<<<< HEAD
+
 @CrossOrigin(origins = {"http://vaccine-verification-bucket.s3-website.us-east-2.amazonaws.com","http://localhost:4200"})
-=======
->>>>>>> f117418bcf66aa3b3364bac2a9276ccef11e9ccd
+
 public class ProviderController {
 
     @Autowired

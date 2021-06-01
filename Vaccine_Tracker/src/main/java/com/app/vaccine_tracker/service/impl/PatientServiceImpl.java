@@ -31,12 +31,10 @@ public class PatientServiceImpl implements PatientService {
     public String PatientLoginWithUsername(String username, String password) {
         try {
 
-
             PatientCredential patientCredential = patientCredsRepository.findByUsername(username);
             Patient patient = patientCredential.getPatient();
             String ssn = patient.getCustomerSSN();
-
-
+            
             if (patientCredential == null) {
                 vaxify.warn("Account is not found");
                 throw new UserException("Account is not found");
