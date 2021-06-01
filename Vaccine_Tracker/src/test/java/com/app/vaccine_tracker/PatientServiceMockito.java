@@ -34,7 +34,15 @@ public class PatientServiceMockito {
     @Test
     public void testRegisterPatientAccount(){
         PatientService patientService = mock(PatientService.class);
-        when(patientService.registerPatientAccount("phuch@gmail", "phuch", "password", "123-12-1234")).thenReturn(patient);
-        Assertions.assertNotNull(patientService);
+        when(patientService.registerPatientAccount("phuch@gmail", "phuch", "password", "123-12-1234")).thenReturn(true);
+        Assertions.assertEquals(true,patientService.registerPatientAccount("phuch@gmail", "phuch", "password", "123-12-1234") );
     }
+
+    @Test
+    public void testValidatePatientCredentials(){
+        PatientService patientService = mock(PatientService.class);
+        when(patientService.validatePatientCredential("123-12-1234", "phuch@gmail.com")).thenReturn(true);
+        Assertions.assertEquals(true,patientService.validatePatientCredential("123-12-1234", "phuch@gmail.com") );
+    }
+
 }
