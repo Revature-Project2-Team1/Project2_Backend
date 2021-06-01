@@ -68,7 +68,6 @@ public class AddVaccineRecordTest {
         VaccineRecordService vaccineRecordService = mock(VaccineRecordService.class);
         when(vaccineRecordService.addVaccineRecord(dvr)).thenReturn(createDVRForTest());
         Assertions.assertNotNull(dvr);
-
     }
     @Test
     public void test2() throws ParseException{
