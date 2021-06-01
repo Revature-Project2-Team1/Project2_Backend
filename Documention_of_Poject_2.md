@@ -29,7 +29,7 @@ By Abeil Adilow, Emilio Barajas, Anthony Escalante, Phuc Huynh
    - Get statistics by full database or by location and will be shown in pie charts
 
 ## Tech Stack
-
+ 
 * Frontend 
    - HTML/CSS/Bootstrap
    - Angular

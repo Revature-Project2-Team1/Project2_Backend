@@ -19,7 +19,6 @@ public class QRrecord {
     private int qr_id;
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ssn")
-    @JsonIgnore
     private Patient patient;
 
     private long time_stamp;
