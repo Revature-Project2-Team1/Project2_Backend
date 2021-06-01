@@ -28,12 +28,11 @@ public class PatientServiceImpl implements PatientService {
 
 
     @Override
-    public String PatientLoginWithUsername(String username, String password) {
+    public Patient PatientLoginWithUsername(String username, String password) {
         try {
 
             PatientCredential patientCredential = patientCredsRepository.findByUsername(username);
             Patient patient = patientCredential.getPatient();
-            String ssn = patient.getCustomerSSN();
 
             if (patientCredential == null) {
                 vaxify.warn("Account is not found");
@@ -41,7 +40,7 @@ public class PatientServiceImpl implements PatientService {
             }
             if (patientCredential.getUsername().equals(username) && patientCredential.getPassword().equals(password)) {
 
-                return ssn;
+                return patient;
             } else {
                 vaxify.warn("Invalid username or password");
                 throw new UserException("Invalid username or password");
@@ -52,17 +51,16 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public String PatientLoginWithEmail(String email, String password) {
+    public Patient PatientLoginWithEmail(String email, String password) {
         try {
             PatientCredential patientCredential = patientCredsRepository.findByEmail(email);
             Patient patient = patientCredential.getPatient();
-            String ssn = patient.getCustomerSSN();
             if (patientCredential == null) {
                 vaxify.warn("Account is not found");
                 throw new UserException("Account is not found");
             }
             if (patientCredential.getPassword().equals(password) && patientCredential.getEmail().equals(email)) {
-                return ssn;
+                return patient;
             } else {
                 vaxify.warn("Invalid username or password");
                 throw new UserException("Invalid email or password.");
@@ -103,9 +101,8 @@ public class PatientServiceImpl implements PatientService {
                 }
             }
         } catch (NullPointerException e) {
-            vaxify.warn(e.getMessage());
+            throw new UserException("Account is not found");
         }
-        return status;
     }
 
 
@@ -123,7 +120,7 @@ public class PatientServiceImpl implements PatientService {
                 throw new UserException("Your information is not matched");
             }
         }catch (NullPointerException a){
-            throw new UserException("Email not found");
+            throw new UserException("Information not found");
         }
     }
 
