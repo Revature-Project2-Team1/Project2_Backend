@@ -20,7 +20,6 @@ import java.util.List;
 import static org.mockito.Mockito.*;
 public class AddVaccineRecordTest {
 
-
     public List<VaccineRecord> createVRForTest() throws ParseException {
         List<VaccineRecord> vaccineRecords = new ArrayList<>();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -44,6 +43,7 @@ public class AddVaccineRecordTest {
 
         return vaccineRecords;
     }
+
     public String createDVRForTest() throws ParseException {
 
         DVR dvr = new DVR();

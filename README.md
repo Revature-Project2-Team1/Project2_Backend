@@ -17,16 +17,16 @@ By Abeil Adilow, Emilio Barajas, Anthony Escalante, Phuc Huynh
 * Customer:
    - Login 
    - Create account and link it with medical information
-   - Retrive email if forgoten with SSN for secutity
+   - Retrieve email if forgotten with SSN for security
    - Change password
    - Get vaccine status
    - Generate QR code with vaccine status
-   - Get other customers infomation from a QR code
+   - Get other customers information from a QR code
 
 * Professional:
    - Login
    - Update customer medical information
-   - Get statisics by full database or by location and will be shown in pie charts
+   - Get statistics by full database or by location and will be shown in pie charts
 
 ## Tech Stack
 
