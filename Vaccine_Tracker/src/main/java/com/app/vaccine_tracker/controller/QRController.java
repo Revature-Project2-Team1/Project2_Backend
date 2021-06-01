@@ -1,6 +1,7 @@
 package com.app.vaccine_tracker.controller;
 
 import com.app.vaccine_tracker.exception.UserException;
+import com.app.vaccine_tracker.model.QRrecord;
 import com.app.vaccine_tracker.service.QRService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +16,6 @@ public class QRController {
     private QRService qrService;
 
     @GetMapping("/qr/find-patient/{ssn}")
-    @ExceptionHandler(UserException.class)
     public ResponseEntity<Object> getPatient(@PathVariable String ssn){
 
         try {
@@ -24,4 +24,29 @@ public class QRController {
             return new ResponseEntity<Object>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
+
+    @PostMapping("/qr/add")
+    public ResponseEntity<Object> addQR(@RequestBody QRrecord qrRecord){
+
+            return new ResponseEntity<Object>(qrService.addQR(qrRecord), HttpStatus.OK);
+
+    }
+
+    @DeleteMapping("/qr/delete/{ssn}")
+    @ExceptionHandler(UserException.class)
+    public void deleteQR(@PathVariable String ssn){
+
+        qrService.deleteQR(ssn);
+    }
+
+    @GetMapping("/qr/check-qr/{ssn}")
+    public ResponseEntity<Object> checkQR(@PathVariable String ssn){
+
+        try {
+            return new ResponseEntity<Object>(qrService.checkQR(ssn), HttpStatus.OK);
+        } catch(UserException e) {
+            return new ResponseEntity<Object>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
+
 }
