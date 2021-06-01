@@ -24,7 +24,6 @@ public class PatientController {
     @GetMapping("/patient/username-login/{username}/{password}")
     //@ExceptionHandler(UserException.class)
     public ResponseEntity<Object> patientLoginWithUsername(@PathVariable String username, @PathVariable String password){
-
         try {
             return new ResponseEntity<Object>(patientService.PatientLoginWithUsername(username, password), HttpStatus.OK);
         }catch(UserException e) {
