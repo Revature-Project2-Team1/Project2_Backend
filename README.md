@@ -64,5 +64,4 @@ git clone https://github.com/Revature-Project2-Team1/Project2_Backend.git
 
 ## Usage
 
-> You open index.htmnl to get a screen that lets you have three options login as customer, login as employee, and create user. From there you will login correctly (user, pass for customer, jpeters, Password1 for employee) and login again at the next page. You will be about to customer things like withdraw and deposit from the customer account and more admin things like look up accounts and transactions of accounts (user_id 8, account_number 1254 1234, transaction 18).
-
+> Run the .jar file or through an IDE for the backend and run the ng serve and go to localhost to begin the application. You can login as a Patient to see your vaccine status and generate a QR code to show your status. You are also able to scan a QR code on your computer to see the status of the holder of that Qr code. You then have to logout to register as a patient to connect your login information and your medical status. Login into professional to add a shot date to a patient, logout after that.
