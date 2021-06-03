@@ -41,16 +41,17 @@ By Abeil Adilow, Emilio Barajas, Anthony Escalante, Phuc Huynh
 
 ## Features
 
-List of features ready and TODOs for future development
-* Create a new customer or employee in the DB
-* Get account transactions from current accounts 
-* Get account details
-* Withdraw and deposit mone in customer account by updating DB 
-* Delete accounts pending approval from the account table
+List of features ready
+* Patient can login to their account and register for a new account and link it with their medical information
+* Patient can change password 
+* Patient can get their own vaccine status and generate a QR code for other to scan a see their status
+* Patient can scan a QR code and get the status of other people
+* Professional can Login to their account
+* Professional update patient medical information
 
 To-do list:
-* Finish CSS to make the HTML look more presentable
-* Fix accept and reject commands in employee page
+* Fix a few bugs that has the front end pointing to the wrong endpoint
+* Add a statistics page for Professional to view
 
 ## Getting Started
    
@@ -60,48 +61,8 @@ git clone https://github.com/Revature-Project2-Team1/Project2_Backend.git
 > ./gradlew build in Vaccine_Tracker folder
 - run in a IDE or Gradle 
 
-## User stories
-
-* Customer:
-   - Login 
-   - Create account and link it with medical information
-   - Retrieve email if forgotten with SSN for security
-   - Change password
-   - Get vaccine status
-   - Generate QR code with vaccine status
-   - Get other customers information from a QR code
-
-* Professional:
-   - Login
-   - Update customer medical information
-   - Get statistics by full database or by location and will be shown in pie charts
 
 ## Usage
 
 > You open index.htmnl to get a screen that lets you have three options login as customer, login as employee, and create user. From there you will login correctly (user, pass for customer, jpeters, Password1 for employee) and login again at the next page. You will be about to customer things like withdraw and deposit from the customer account and more admin things like look up accounts and transactions of accounts (user_id 8, account_number 1254 1234, transaction 18).
 
-## Features
-
-List of features ready and TODOs for future development
-* Create a new customer or employee in the DB
-* Get account transactions from current accounts 
-* Get account details
-* Withdraw and deposit mone in customer account by updating DB 
-* Delete accounts pending approval from the account table
-
-To-do list:
-* Finish CSS to make the HTML look more presentable
-* Fix accept and reject commands in employee page
-
-## Getting Started
-   
-git remote add origin https://github.com/Anthony-Tag/Revature_Bank_App.git
-
-> Compile and run the java code for the server and DB connection  
-> Open up the Index.html in the browser and pick a login
-
-- run in a IDE or Gradle 
-
-## Usage
-
-> You open index.htmnl to get a screen that lets you have three options login as customer, login as employee, and create user. From there you will login correctly (user, pass for customer, jpeters, Password1 for employee) and login again at the next page. You will be about to customer things like withdraw and deposit from the customer account and more admin things like look up accounts and transactions of accounts (user_id 8, account_number 1254 1234, transaction 18).
