@@ -1,6 +1,6 @@
 # Project 2 Documentation
 
-## Project name: Vaccine Tracker
+## Project name: Vaxify
 
 By Abeil Adilow, Emilio Barajas, Anthony Escalante, Phuc Huynh 
 
@@ -15,8 +15,8 @@ By Abeil Adilow, Emilio Barajas, Anthony Escalante, Phuc Huynh
    - Angular 11
    - TypeScript
 * Backend
-   - Java8
-   - Spring
+   - Java 8
+   - Spring 
    - Hibernate/JPA
    - Swagger
 * Database 
@@ -54,10 +54,10 @@ To-do list:
 
 ## Getting Started
    
-git clone https://github.com/Anthony-Tag/Revature_Bank_App.git
+git clone https://github.com/Revature-Project2-Team1/Project2_Backend.git
 
-> Compile and run the java code for the server and DB connection  
-> ./gradlew build in Vaccine_Tracker folder and 
+> Compile and run the java code for the server test DB connection  
+> ./gradlew build in Vaccine_Tracker folder
 - run in a IDE or Gradle 
 
 ## User stories
@@ -76,6 +76,9 @@ git clone https://github.com/Anthony-Tag/Revature_Bank_App.git
    - Update customer medical information
    - Get statistics by full database or by location and will be shown in pie charts
 
+## Usage
+
+> You open index.htmnl to get a screen that lets you have three options login as customer, login as employee, and create user. From there you will login correctly (user, pass for customer, jpeters, Password1 for employee) and login again at the next page. You will be about to customer things like withdraw and deposit from the customer account and more admin things like look up accounts and transactions of accounts (user_id 8, account_number 1254 1234, transaction 18).
 
 ## Features
 
